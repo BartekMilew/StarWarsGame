@@ -11,20 +11,25 @@ import {
 import React, { useEffect } from 'react';
 
 function PlayerCard({ playerInformation, name, wins }) {
-  useEffect(() => {
-    console.log('mount');
-  }, []);
+  console.log(playerInformation)
+
   return (
     <Grid item xs={6}>
       <Typography gutterBottom color="primary" variant="body1">
         {name}
       </Typography>
+ 
+
 
       <Card sx={{ minWidth: 275 }}>
         <CardContent>
           <Typography gutterBottom variant="h5">
             {playerInformation.information.name}{' '}
             {wins && <span style={{ color: 'red' }}>WINNER</span>}
+          </Typography>
+          <Typography gutterBottom variant="body2">
+            WINS:  {playerInformation.wins}
+           
           </Typography>
 
           <Table size="small">
